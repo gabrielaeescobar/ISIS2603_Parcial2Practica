@@ -1,0 +1,36 @@
+
+<div class="container-fluid">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <div class="row">
+        <div class="col">
+            <table class="table table-secondary">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Channel</th>
+                        <th scope="col">Seasons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let serie of series">
+                        <td>{{serie.id}}</td>
+                        <td (click)="onSelected(serie)" style="color: rgb(0, 0, 255);">{{serie.name}}</td>
+                        <td>{{serie.channel}}</td>
+                        <td>{{serie.seasons}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Seasons average: {{averageSeasons}}</p>
+        </div>
+        <div class="col">
+            <div *ngIf="selected">
+                <app-serie-detail [serieDetail]="selectedSerie"></app-serie-detail>
+            </div>
+            
+        </div>
+    </div>
+
+  </div>
+
+  
