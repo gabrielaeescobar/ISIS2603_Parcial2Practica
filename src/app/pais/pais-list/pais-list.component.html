@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col">
+        <table class="table table-secondary">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Capital</th>
+                    <th scope="col">Ano de conformacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pais of paises" (click)="onSelected(pais)">
+                    <td>{{pais.id}}</td>
+                    <td>{{pais.name}}</td>
+                    <td>{{pais.capital}}</td>
+                    <td>{{pais.formation_year}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p *ngIf="paisMasAntiguo">{{ paisMasAntiguo }}</p>
+
+        
+        
+    </div>
+
+    <div class="col">
+        <div class="col">
+            <div *ngIf="selected">
+                <app-pais-detail [pais]="selectedPais"></app-pais-detail>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
